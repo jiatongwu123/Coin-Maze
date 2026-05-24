@@ -1,10 +1,6 @@
-
-
-# Coin Adventure
+# Coin Mazee
 
 A simple 2D platformer game made with Godot 4.
-
-
 
 ## About the Game
 
@@ -16,6 +12,14 @@ This version currently includes:
 - Score counter
 - Animated player
 - Platform movement and jumping
+
+---
+
+## Demo Video
+
+Watch the gameplay demo here:
+
+🎮 https://www.youtube.com/watch?v=mFRxhfhqHOU
 
 ---
 
