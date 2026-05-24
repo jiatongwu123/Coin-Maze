@@ -1,5 +1,3 @@
-
-
 # Coin Adventure
 
 A simple 2D platformer game made with Godot 4.
