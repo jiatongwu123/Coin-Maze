@@ -2,6 +2,7 @@
 
 A simple 2D platformer game made with Godot 4.
 
+https://www.youtube.com/watch?v=t2v_5Z_tEuQ
 ## About the Game
 
 Coin Adventure is a platform game where the player jumps across platforms and collects coins.
