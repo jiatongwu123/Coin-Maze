@@ -1,0 +1,147 @@
+[gd_scene load_steps=20 format=4 uid="uid://d4kps4ob2gq5t"]
+
+[ext_resource type="Texture2D" uid="uid://dlxv7ltlnskpf" path="res://assets/images/asset/background.png" id="1_d5djh"]
+[ext_resource type="Texture2D" uid="uid://dbkrr4ijo0gik" path="res://assets/images/asset/wall.png" id="2_ok6xr"]
+[ext_resource type="PackedScene" uid="uid://cdg82mh4ljjty" path="res://scenes/player.tscn" id="3_k0mew"]
+[ext_resource type="PackedScene" uid="uid://cj67uvqwvtt4x" path="res://scenes/coin.tscn" id="5_oyk6k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dywbp"]
+texture = ExtResource("2_ok6xr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1seuy"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_dywbp")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1seuy"]
+load_path = "res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-da15746e6bd54175d061e70c1755d961.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adcqg"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4pvo"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_craya"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh7ej"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aetvv"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q6iu"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xhfr"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3otjo"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6emc"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbma7"]
+atlas = SubResource("CompressedTexture2D_1seuy")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wagyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adcqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4pvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_craya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh7ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aetvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q6iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3otjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6emc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbma7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj4su"]
+size = Vector2(59, 121)
+
+[node name="LevelRoot" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1296.0
+offset_bottom = 720.0
+texture = ExtResource("1_d5djh")
+stretch_mode = 6
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAMAAUAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAP//AAAAAAAAAAATAP//AAAAAAAAAAASAP//AAAAAAAAAAARAP//AAAAAAAAAAAQAP//AAAAAAAAAAAPAP//AAAAAAAAAAAOAP//AAAAAAAAAAANAP//AAAAAAAAAAAMAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAALAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAANAAYAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAARAAQAAAAAAAAAAAARAAMAAAAAAAAAAAASAAMAAAAAAAAAAAATAAMAAAAAAAAAAAATAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_1seuy")
+
+[node name="Player" parent="." instance=ExtResource("3_k0mew")]
+position = Vector2(804, 233)
+
+[node name="Apples" type="Node2D" parent="."]
+
+[node name="Apple" parent="Apples" instance=ExtResource("5_oyk6k")]
+position = Vector2(646, 399)
+
+[node name="Apple2" parent="Apples" instance=ExtResource("5_oyk6k")]
+position = Vector2(80, 168)
+
+[node name="Apple3" parent="Apples" instance=ExtResource("5_oyk6k")]
+position = Vector2(1029, 159)
+
+[node name="Flag" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1219, 77)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wagyc")
+
+[node name="Exit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(1264, 98)
+shape = SubResource("RectangleShape2D_vj4su")
+
+[connection signal="body_entered" from="Exit" to="Player" method="_on_exit_body_entered"]
